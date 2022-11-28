@@ -26,10 +26,8 @@ const ToDoForm = ({ addTask }) => {
                         className="input" 
                         onChange={handleChange} 
                         placeholder="Enter task..."/>
+                        <Button variant="primary mt-2 mb-2" size="m" type="submit">Add Task</Button>
                     </Form>
-                </Col>
-                <Col>
-                    <Button variant="primary" size="m" type="submit">Add Task</Button>
                 </Col>
             </Row>
         </div>

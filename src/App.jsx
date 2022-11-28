@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import test data
 import data from "./data.json";
@@ -13,8 +12,7 @@ import ToDoForm from './ToDoForm';
 import './App.css';
 
 function App() {
-  const [ toDoList, setToDoList ] = useState(data);
-
+  const [ toDoList, setToDoList ] = useState(data); //or use data instead of []
 
   const handleToggle = (id) => {
     let mapped = toDoList.map(task => {
@@ -49,15 +47,17 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <ToDoForm addTask={addTask}/>
-      <ToDoList 
-        toDoList={toDoList} 
-        handleToggle={handleToggle} 
-        handleFilter={handleFilter}
-        markTodo={markTodo} 
-        removeTodo={removeTodo}/>
+      <div>
+          <ToDoList
+          toDoList={toDoList} 
+          handleToggle={handleToggle} 
+          handleFilter={handleFilter}
+          markTodo={markTodo} 
+          removeTodo={removeTodo}/>
+      </div>
     </div>
   );
  }
